@@ -10,7 +10,6 @@
 		<!-- <style></style> -->
 		<!-- Or link external file -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 		<link rel="stylesheet" href="css/style.css" media="all" />
 		<style>
 			body {
@@ -28,13 +27,15 @@
 		<div class="wrapper" align="center">
 			<h2>Meet and fall in love!</h2>
 			<form method="POST" action="includes/signup.inc.php">
+				<?php
+					if (isset($_GET['error3']))
+						echo '<span>Your emmail or password was incorrect</span>';
+				?>
 				<label>
 					Username
 					<?php
 						if (isset($_GET['error1']))
 							echo '<span>Please enter your username.</span>';
-						else if (isset($_GET['error11']))
-							echo '<span>Username already exits</span>';
 					?>
 					<input type="text" name="username" class="txt" required />
 				</label>

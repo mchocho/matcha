@@ -81,11 +81,19 @@ label span {
 	padding: 15px;
 }
 
-input[type="submit"] {
+input[type="submit"], .custom_btn {
 	width: 10%;
 	background: #000;
 	color: #eee;
 	padding: 8px;
 	border-radius: 8px;
-	border: none;
+	border: 1px solid transparent;
+	text-align: center;
+}
+
+
+input[type="submit"]:hover, .custom_btn:hover {
+	background: #eee;
+	color: #000;
+	border: 1px solid #000;
 }
